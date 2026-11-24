@@ -1,1 +1,1 @@
-# Student-Course-Registration
+# Shaher — Student Account & Login\n\nVanilla HTML, CSS and JavaScript for FR-1 student registration, FR-2 student/admin login and FR-3 logout.\n\nOpen index.html in a browser. Demo admin: admin@university.edu / admin123. Create a student account through pages/signup.html.\n\nThis is a frontend-only academic simulation using localStorage. Do not enter real credentials; production authentication requires a backend and server-side password hashing.\n
