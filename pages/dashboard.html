@@ -1,2 +1,31 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Account | Student Course Registration</title><link rel="stylesheet" href="../css/style.css"></head><body><main class="auth-page" id="dashboard-page"><header class="site-header"><a class="brand" href="../index.html"><span class="brand-icon">✦</span><span class="brand-copy"><strong>Student Course Registration</strong><small>LEARN · REGISTER · ACHIEVE</small></span></a><button class="header-link" id="logout-button" type="button">Log out ↗</button></header><section class="auth-card"><div class="card-emblem">✧</div><p class="card-kicker">ACCOUNT SESSION</p><h1 id="dashboard-welcome">Welcome.</h1><p class="card-subtitle">You are signed in to the Student Course Registration demo.</p><p class="dashboard-email" id="dashboard-email"></p><button class="primary-button" id="dashboard-logout" type="button">Log out</button></section></main><script src="../js/auth.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signed In | Student Course Registration System</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <a class="brand" href="dashboard.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-6 9.2v4.1c0 1.7 2.7 3.2 6 3.2s6-1.5 6-3.2v-4.1l-6 3.3-6-3.3Z"/></svg>
+      <span>Course Registration</span>
+    </a>
+    <nav aria-label="Primary">
+      <button type="button" class="btn btn-ghost" data-action="logout">Logout</button>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <section class="glass-card glass-card--center" aria-labelledby="welcome-title">
+      <h1 id="welcome-title">Welcome, <span id="user-name">User</span></h1>
+      <p class="card-subtitle">You are signed in as</p>
+      <p class="role-badge" id="user-role">Student</p>
+      <p class="card-note">This is a placeholder page that demonstrates the demo login and logout flow.</p>
+      <button type="button" class="btn btn-primary" data-action="logout">Logout</button>
+    </section>
+  </main>
+</body>
+</html>
