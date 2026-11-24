@@ -1,4 +1,66 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create account | Student Course Registration</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/style.css"></head>
-<body><main class="auth-page"><header class="site-header"><a class="brand" href="../index.html"><span class="brand-icon">✦</span><span class="brand-copy"><strong>Student Course Registration</strong><small>LEARN · REGISTER · ACHIEVE</small></span></a><div class="header-action"><span>Already registered?</span><a class="header-link" href="login.html">Sign in ↗</a></div></header>
-<section class="auth-card signup-card"><div class="card-emblem">✧</div><p class="card-kicker">GET STARTED</p><h1>Create your <span>account.</span></h1><p class="card-subtitle">A few details and you're ready to get started.</p><form id="signup-form" novalidate><label class="input-wrap"><span>♙</span><input id="full-name" type="text" placeholder="Full name" autocomplete="name" aria-label="Full name" required minlength="2"></label><label class="input-wrap"><span>✉</span><input id="signup-email" type="email" placeholder="University email address" autocomplete="email" aria-label="University email address" required></label><label class="input-wrap"><span>▣</span><input id="signup-password" type="password" placeholder="Password (at least 6 characters)" autocomplete="new-password" aria-label="Password" required minlength="6"></label><p class="form-message" id="signup-message" role="alert" aria-live="polite"></p><button class="primary-button" type="submit">Create student account ↗</button></form><div class="card-bottom"><span></span><p>Already have an account? <a href="login.html">Sign in</a></p><span></span></div><p class="demo-disclaimer">Academic front-end demo · Do not use a real password</p></section><footer class="site-footer">© 2026 Student Course Registration System</footer></main><script src="../js/auth.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Account | Student Course Registration System</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <a class="brand" href="login.html">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-6 9.2v4.1c0 1.7 2.7 3.2 6 3.2s6-1.5 6-3.2v-4.1l-6 3.3-6-3.3Z"/></svg>
+      <span>Course Registration</span>
+    </a>
+    <nav aria-label="Primary">
+      <a class="nav-link" href="login.html">Sign In</a>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <section class="glass-card" aria-labelledby="signup-title">
+      <h1 id="signup-title">Create Account</h1>
+      <p class="card-subtitle">Student registration. Fill in your details to get started.</p>
+
+      <form id="signup-form" data-form="signup" novalidate>
+        <div class="form-message" role="alert" aria-live="polite" hidden></div>
+
+        <div class="form-field">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="fullName" autocomplete="name" placeholder="Your full name" aria-describedby="full-name-error">
+          <p class="field-error" id="full-name-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="name@university.edu" aria-describedby="email-error">
+          <p class="field-error" id="email-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" autocomplete="new-password" placeholder="At least 8 characters" aria-describedby="password-error">
+            <button type="button" class="toggle-password" data-target="password" aria-label="Show password">Show</button>
+          </div>
+          <p class="field-error" id="password-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="confirm-password">Confirm Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="confirm-password" name="confirmPassword" autocomplete="new-password" placeholder="Re-enter your password" aria-describedby="confirm-password-error">
+            <button type="button" class="toggle-password" data-target="confirm-password" aria-label="Show password">Show</button>
+          </div>
+          <p class="field-error" id="confirm-password-error"></p>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
+
+      <p class="card-footer">Already have an account? <a href="login.html">Back to Sign In</a></p>
+    </section>
+  </main>
+</body>
+</html>
