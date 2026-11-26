@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Available Courses | Student Course Registration System</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .courses-wrapper {
+      width: 100%;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+    }
+    .courses-header {
+      margin-bottom: 1.5rem;
+    }
+    .search-filter-bar {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .search-filter-bar input,
+    .search-filter-bar select {
+      padding: 0.7rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+      color: inherit;
+      font-size: 0.95rem;
+    }
+    .search-filter-bar input {
+      flex: 1;
+      min-width: 240px;
+    }
+    .search-filter-bar select option {
+      color: #111;
+    }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .course-card {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .course-code {
+      font-size: 0.85rem;
+      font-weight: 700;
+      opacity: 0.85;
+      margin-bottom: 0.35rem;
+    }
+    .course-title {
+      font-size: 1.15rem;
+      margin: 0 0 0.5rem;
+    }
+    .course-meta {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      z-index: 1000;
+    }
+    .modal-box {
+      width: 100%;
+      max-width: 460px;
+      padding: 1.75rem;
+    }
+    .modal-box h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .detail-row {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.95rem;
+    }
+    .modal-actions {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <a class="brand" href="dashboard.html">
+      <span>Course Registration</span>
+    </a>
+    <nav aria-label="Primary">
+      <a class="btn btn-ghost" href="dashboard.html">Dashboard</a>
+      <a class="btn btn-ghost" href="courses.html">Courses</a>
+    </nav>
+  </header>
 
+  <main class="courses-wrapper">
+    <div class="courses-header">
+      <h1>Available Courses</h1>
+      <p class="card-subtitle">Browse open courses, filter by credits, or view full section details.</p>
+    </div>
+
+    <div class="search-filter-bar">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by course code, title, or instructor..."
+      />
+      <select id="creditFilter" aria-label="Filter by credit hours">
+        <option value="all">All Credit Hours</option>
+        <option value="2">2 Credit Hours</option>
+        <option value="3">3 Credit Hours</option>
+        <option value="4">4 Credit Hours</option>
+      </select>
+    </div>
+
+    <div id="courseList" class="course-grid"></div>
+  </main>
+
+  <div id="courseModal" class="modal-overlay">
+    <div class="modal-box glass-card">
+      <h2 id="modalTitle">Course Title</h2>
+      <div class="detail-row"><strong>Course Code:</strong> <span id="modalCode"></span></div>
+      <div class="detail-row"><strong>Instructor:</strong> <span id="modalInstructor"></span></div>
+      <div class="detail-row"><strong>Credit Hours:</strong> <span id="modalCredits"></span></div>
+      <div class="detail-row"><strong>Day / Time:</strong> <span id="modalSchedule"></span></div>
+      <div class="detail-row"><strong>Seats:</strong> <span id="modalSeats"></span></div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="closeModalBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/courses.js"></script>
+</body>
+</html>
